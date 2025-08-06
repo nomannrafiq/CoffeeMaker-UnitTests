@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" tests="18" skipped="0" failures="5" errors="0" timestamp="2025-08-06T01:08:12" hostname="Nomi" time="0.118">
+<testsuite name="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" tests="25" skipped="0" failures="9" errors="0" timestamp="2025-08-06T23:25:20" hostname="Nomi" time="0.14">
   <properties/>
-  <testcase name="testAddRecipeWhenFull" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.087">
+  <testcase name="testMakeCoffeeWithInsufficientInventory" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.117">
+    <failure message="java.lang.AssertionError: expected:&lt;75&gt; but was:&lt;25&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;75&gt; but was:&lt;25&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testMakeCoffeeWithInsufficientInventory(CoffeeMakerTest.java:263)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:750)
+</failure>
+  </testcase>
+  <testcase name="testAddRecipeWhenFull" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
     <failure message="java.lang.AssertionError" type="java.lang.AssertionError">java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:86)
 	at org.junit.Assert.assertTrue(Assert.java:41)
@@ -58,12 +114,130 @@
 </failure>
   </testcase>
   <testcase name="testDeleteRecipeNonExistent" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
-  <testcase name="testAddDuplicateRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
-  <testcase name="testCheckInventory" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
-  <testcase name="testAddInventoryNegativeMilk" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
-  <testcase name="testAddInventory" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
-  <testcase name="testMakeCoffee" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
-  <testcase name="testAddInventoryException" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testAddDuplicateRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
+  <testcase name="testCheckInventory" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testAddInventoryNegativeMilk" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
+  <testcase name="testAddInventory" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testMakeCoffeeWithExactFunds" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;Coffee: 1[2]&#10;Milk: 14&#10;Sugar: 14&#10;...&gt; but was:&lt;Coffee: 1[8]&#10;Milk: 14&#10;Sugar: 14&#10;...&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Coffee: 1[2]
+Milk: 14
+Sugar: 14
+...&gt; but was:&lt;Coffee: 1[8]
+Milk: 14
+Sugar: 14
+...&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testMakeCoffeeWithExactFunds(CoffeeMakerTest.java:242)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:750)
+</failure>
+  </testcase>
+  <testcase name="testMakeCoffee" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testAddInventoryException" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.002"/>
+  <testcase name="testMakeCoffeeWithInsufficientFunds" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testMakeCoffeeWithZeroIngredient" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
+    <failure message="java.lang.AssertionError: expected:&lt;25&gt; but was:&lt;35&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;25&gt; but was:&lt;35&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testMakeCoffeeWithZeroIngredient(CoffeeMakerTest.java:289)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:750)
+</failure>
+  </testcase>
+  <testcase name="testMakeCoffeeWithZeroPriceRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
   <testcase name="testAddNullRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
 	at edu.ncsu.csc326.coffeemaker.RecipeBook.addRecipe(RecipeBook.java:45)
@@ -119,12 +293,12 @@
 </failure>
   </testcase>
   <testcase name="testAddInventoryNegativeCoffee" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
-  <testcase name="testAddInventoryValid" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
+  <testcase name="testAddInventoryValid" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.002">
     <failure message="java.lang.AssertionError: InventoryException should not be thrown for valid input." type="java.lang.AssertionError">java.lang.AssertionError: InventoryException should not be thrown for valid input.
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.assertTrue(Assert.java:41)
 	at org.junit.Assert.assertFalse(Assert.java:64)
-	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testAddInventoryValid(CoffeeMakerTest.java:180)
+	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testAddInventoryValid(CoffeeMakerTest.java:185)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -175,7 +349,7 @@
 </failure>
   </testcase>
   <testcase name="testEditRecipeNonExistent" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
-  <testcase name="testDeleteRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.002">
+  <testcase name="testDeleteRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0">
     <failure message="java.lang.AssertionError: expected null, but was:&lt;&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected null, but was:&lt;&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotNull(Assert.java:755)
@@ -231,14 +405,75 @@
 	at java.lang.Thread.run(Thread.java:750)
 </failure>
   </testcase>
-  <testcase name="testAddInventoryNonNumeric" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
-  <testcase name="testAddRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
-  <testcase name="testEditRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.003"/>
-  <testcase name="testDeleteRecipeInvalidIndex" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.003">
+  <testcase name="testMakeCoffeeForNonExistentRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testAddInventoryNonNumeric" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testAddRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001"/>
+  <testcase name="testEditRecipe" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.0"/>
+  <testcase name="testDeleteRecipeInvalidIndex" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001">
     <failure message="java.lang.ArrayIndexOutOfBoundsException: -1" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: -1
 	at edu.ncsu.csc326.coffeemaker.RecipeBook.deleteRecipe(RecipeBook.java:71)
 	at edu.ncsu.csc326.coffeemaker.CoffeeMaker.deleteRecipe(CoffeeMaker.java:55)
 	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testDeleteRecipeInvalidIndex(CoffeeMakerTest.java:151)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:750)
+</failure>
+  </testcase>
+  <testcase name="testMakeCoffeeWithMoreThanEnoughFunds" classname="edu.ncsu.csc326.coffeemaker.CoffeeMakerTest" time="0.001">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;Coffee: 1[2]&#10;Milk: 14&#10;Sugar: 14&#10;...&gt; but was:&lt;Coffee: 1[8]&#10;Milk: 14&#10;Sugar: 14&#10;...&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Coffee: 1[2]
+Milk: 14
+Sugar: 14
+...&gt; but was:&lt;Coffee: 1[8]
+Milk: 14
+Sugar: 14
+...&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at edu.ncsu.csc326.coffeemaker.CoffeeMakerTest.testMakeCoffeeWithMoreThanEnoughFunds(CoffeeMakerTest.java:249)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

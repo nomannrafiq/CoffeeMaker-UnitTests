@@ -231,6 +231,65 @@ public class CoffeeMakerTest {
 	 * 		the coffee costs
 	 * Then we get the correct change back.
 	 */
+
+
+	//--- Make Coffee Test--
+
+	@Test
+	public void testMakeCoffeeWithExactFunds() {
+		coffeeMaker.addRecipe(recipe1);
+		assertEquals(0, coffeeMaker.makeCoffee(0, 50));
+		assertEquals("Coffee: 12\nMilk: 14\nSugar: 14\nChocolate: 15\n", coffeeMaker.checkInventory());
+	}
+	
+	@Test
+	public void testMakeCoffeeWithMoreThanEnoughFunds() {
+		coffeeMaker.addRecipe(recipe1);
+		assertEquals(25, coffeeMaker.makeCoffee(0, 75));
+		assertEquals("Coffee: 12\nMilk: 14\nSugar: 14\nChocolate: 15\n", coffeeMaker.checkInventory());
+	}
+	
+	@Test
+	public void testMakeCoffeeWithInsufficientFunds() {
+		coffeeMaker.addRecipe(recipe1);
+		assertEquals(40, coffeeMaker.makeCoffee(0, 40));
+		assertEquals("Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n", coffeeMaker.checkInventory());
+	}
+	
+	@Test
+	public void testMakeCoffeeWithInsufficientInventory() throws InventoryException {
+		coffeeMaker.addRecipe(recipe1);
+		coffeeMaker.addInventory("0", "0", "0", "0");
+		assertEquals(75, coffeeMaker.makeCoffee(0, 75));
+		assertEquals("Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n", coffeeMaker.checkInventory());
+	}
+	
+	@Test
+	public void testMakeCoffeeForNonExistentRecipe() {
+		assertEquals(100, coffeeMaker.makeCoffee(0, 100));
+	}
+	
+	@Test
+	public void testMakeCoffeeWithZeroPriceRecipe() throws RecipeException {
+		Recipe r = new Recipe();
+		r.setName("Free Coffee");
+		r.setPrice("0");
+		r.setAmtCoffee("1");
+		r.setAmtMilk("1");
+		r.setAmtSugar("1");
+		r.setAmtChocolate("1");
+		
+		coffeeMaker.addRecipe(r);
+		assertEquals(10, coffeeMaker.makeCoffee(0, 10));
+	}
+	
+	@Test
+	public void testMakeCoffeeWithZeroIngredient() {
+		coffeeMaker.addRecipe(recipe4); // Hot Chocolate requires 0 coffee
+		assertEquals(25, coffeeMaker.makeCoffee(0, 100));
+		assertEquals("Coffee: 15\nMilk: 11\nSugar: 14\nChocolate: 11\n", coffeeMaker.checkInventory());
+	}
+
 	@Test
 	public void testMakeCoffee() {
 		coffeeMaker.addRecipe(recipe1);
