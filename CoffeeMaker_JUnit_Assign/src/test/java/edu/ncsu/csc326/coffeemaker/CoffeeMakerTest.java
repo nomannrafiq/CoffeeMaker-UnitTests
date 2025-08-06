@@ -19,6 +19,9 @@
 package edu.ncsu.csc326.coffeemaker;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -101,6 +104,73 @@ public class CoffeeMakerTest {
 	 * @throws InventoryException  if there was an error parsing the quanity
 	 * 		to a positive integer.
 	 */
+
+	// --- Recipe Tests ---
+
+	 @Test
+    public void testAddRecipe() {
+        assertTrue(coffeeMaker.addRecipe(recipe1));
+        assertTrue(coffeeMaker.getRecipes()[0].equals(recipe1));
+    }
+
+	@Test
+	public void testAddRecipeWhenFull() {
+		coffeeMaker.addRecipe(recipe1);
+		coffeeMaker.addRecipe(recipe2);
+		coffeeMaker.addRecipe(recipe3);
+		assertFalse(coffeeMaker.addRecipe(recipe4));
+	}
+	
+	@Test
+	public void testAddDuplicateRecipe() {
+		coffeeMaker.addRecipe(recipe1);
+		assertFalse(coffeeMaker.addRecipe(recipe1));
+	}
+	
+	@Test
+	public void testAddNullRecipe() {
+		assertFalse(coffeeMaker.addRecipe(null));
+	}
+	
+	@Test
+	public void testDeleteRecipe() {
+		coffeeMaker.addRecipe(recipe1);
+		coffeeMaker.addRecipe(recipe2);
+		assertEquals("Mocha", coffeeMaker.deleteRecipe(1));
+		assertNull(coffeeMaker.getRecipes()[1]);
+	}
+	
+	@Test
+	public void testDeleteRecipeNonExistent() {
+		assertNull(coffeeMaker.deleteRecipe(0));
+	}
+	
+	@Test
+	public void testDeleteRecipeInvalidIndex() {
+		coffeeMaker.addRecipe(recipe1);
+		assertNull(coffeeMaker.deleteRecipe(-1));
+	}
+	
+	@Test
+	public void testDeleteRecipeFromEmpty() {
+		assertNull(coffeeMaker.deleteRecipe(0));
+	}
+
+	@Test
+	public void testEditRecipe() throws RecipeException {
+		coffeeMaker.addRecipe(recipe1);
+		recipe2.setName("New Coffee"); // Name doesn't change on edit, but other values do.
+		assertEquals("Coffee", coffeeMaker.editRecipe(0, recipe2));
+		assertEquals(recipe2, coffeeMaker.getRecipes()[0]);
+	}
+	
+	@Test
+	public void testEditRecipeNonExistent() throws RecipeException {
+		assertNull(coffeeMaker.editRecipe(0, recipe1));
+	}
+
+	
+
 	@Test
 	public void testAddInventory() throws InventoryException {
 		coffeeMaker.addInventory("4","7","0","9");
