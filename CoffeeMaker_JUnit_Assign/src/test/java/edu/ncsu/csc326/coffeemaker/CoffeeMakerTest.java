@@ -169,12 +169,47 @@ public class CoffeeMakerTest {
 		assertNull(coffeeMaker.editRecipe(0, recipe1));
 	}
 
-	
+	// --- Inventory Tests ---
 
 	@Test
 	public void testAddInventory() throws InventoryException {
 		coffeeMaker.addInventory("4","7","0","9");
 	}
+	
+	@Test
+	public void testAddInventoryValid() {
+		try {
+			coffeeMaker.addInventory("10", "10", "10", "10");
+			assertEquals("Coffee: 25\nMilk: 25\nSugar: 25\nChocolate: 25\n", coffeeMaker.checkInventory());
+		} catch (InventoryException e) {
+			assertFalse("InventoryException should not be thrown for valid input.", true);
+		}
+	}
+	
+	@Test(expected = InventoryException.class)
+	public void testAddInventoryNegativeCoffee() throws InventoryException {
+		coffeeMaker.addInventory("-1", "10", "10", "10");
+	}
+	
+	@Test(expected = InventoryException.class)
+	public void testAddInventoryNegativeMilk() throws InventoryException {
+		coffeeMaker.addInventory("10", "-1", "10", "10");
+	}
+	
+	@Test(expected = InventoryException.class)
+	public void testAddInventoryNonNumeric() throws InventoryException {
+		coffeeMaker.addInventory("ten", "10", "10", "10");
+	}
+	
+	@Test
+	public void testCheckInventory() {
+		String expected = "Coffee: 15\nMilk: 15\nSugar: 15\nChocolate: 15\n";
+		assertEquals(expected, coffeeMaker.checkInventory());
+	}
+
+
+
+	
 	
 	/**
 	 * Given a coffee maker with the default inventory
